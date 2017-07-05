@@ -7,5 +7,5 @@ service ssh start
 echo ${JAVA_HOME}
 /hadoop-${HADOOP_VERSION}/sbin/start-dfs.sh
 
-# Drop into a shell
-/bin/bash
+# Show log files
+tail -f logs/*.log logs/*.out
