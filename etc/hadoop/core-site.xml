@@ -1,22 +1,22 @@
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://localhost:9000</value>
+        <value>hdfs://repo-hdfs:9000</value>
     </property>
 
 <property>
 	<name>dfs.namenode.datanode.registration.ip-hostname-check</name>
-	<value>false</value>
+	<value>true</value>
 </property>
 
     <property>
        <name>dfs.datanode.use.datanode.hostname</name>
-       <value>false</value>
+       <value>true</value>
     </property>
 
     <property>
        <name>dfs.datanode.address</name>
-       <value>0.0.0.0:50010</value>
+       <value>repo-hdfs:50010</value>
     </property>
 
 <property>

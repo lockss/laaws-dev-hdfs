@@ -42,7 +42,10 @@ services:
             - xyzzy
     
     repo-hdfs:
+        build:
+            context: .
         image: lockss/lockss-hadoop
+        hostname: repo-hdfs
         #container_name: lockss-hdfs
         ports:
             - "9000:9000"
@@ -50,6 +53,14 @@ services:
             - "50020:50020"
             - "50070:50070"
             - "50075:50075"
+
+    repo:
+        image: laaws/laaws-repository
+        links:
+            - repo-hdfs
+            - repo-solr
+        ports:
+            - "8080:8080"
 
 volumes:
     xyzzy:
