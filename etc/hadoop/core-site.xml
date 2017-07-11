@@ -1,7 +1,7 @@
 <configuration>
     <property>
         <name>fs.defaultFS</name>
-        <value>hdfs://repo-hdfs:9000</value>
+        <value>hdfs://laaws-repo-hdfs:9000</value>
     </property>
 
 <property>
@@ -16,7 +16,7 @@
 
     <property>
        <name>dfs.datanode.address</name>
-       <value>repo-hdfs:50010</value>
+       <value>laaws-repo-hdfs:50010</value>
     </property>
 
 <property>
