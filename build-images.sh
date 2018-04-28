@@ -1,2 +1,2 @@
 #!/bin/sh
-docker build -t laaws/laaws-dev-hdfs .
+docker build -t lockss/laaws-dev-hdfs .
