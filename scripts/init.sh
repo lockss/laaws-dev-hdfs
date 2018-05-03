@@ -67,5 +67,14 @@ bin/hdfs namenode -format
 echo ${JAVA_HOME}
 /hadoop/sbin/start-dfs.sh
 
+# Wait a while
+sleep 30
+
+# Configure NFS
+#/hadoop/sbin/hadoop-daemon.sh --script /hadoop/bin/hdfs start portmap
+service rpcbind start
+export HADOOP_PRIVILEGED_NFS_USER=nobody
+/hadoop/sbin/hadoop-daemon.sh --script /hadoop/bin/hdfs start nfs3
+
 # Show log files indefinitely
 tail -f logs/*.log logs/*.out
