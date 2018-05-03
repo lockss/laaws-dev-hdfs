@@ -67,5 +67,12 @@ bin/hdfs namenode -format
 echo ${JAVA_HOME}
 /hadoop/sbin/start-dfs.sh
 
+# Wait a bit
+sleep 15
+
+# Bring up Hadoop through FUSE
+mkdir --mode=777 --parents /mnt/hdfsfuse
+hadoop-fuse-dfs "dfs://localhost:${HDFS_FSMD}" /mnt/hdfsfuse
+
 # Show log files indefinitely
 tail -f logs/*.log logs/*.out
