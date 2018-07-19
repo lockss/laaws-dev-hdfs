@@ -60,9 +60,6 @@ if [ -d /hadoop/etc/hadoop.custom ]; then
   done
 fi
 
-# Format HDFS NameNode
-bin/hdfs namenode -format
-
 # Start HDFS
 echo ${JAVA_HOME}
 /hadoop/sbin/start-dfs.sh

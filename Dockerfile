@@ -21,6 +21,9 @@ RUN curl -SL https://archive.apache.org/dist/hadoop/core/hadoop-${HADOOP_VERSION
 RUN mv /hadoop-${HADOOP_VERSION} /hadoop
 WORKDIR /hadoop
 
+# Format HDFS NameNode
+RUN /hadoop/bin/hdfs namenode -format
+
 # Add SSH configuration to image
 ADD ssh/config /root/.ssh/config
 
